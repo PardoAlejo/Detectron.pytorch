@@ -41,21 +41,15 @@ DATASETS = {
     # Cambiar paths
     'FLC_train': {
         IM_DIR:
-            _DATA_DIR + '/coco/images/train2014',
+            _DATA_DIR + '/FLC/FLC2019_v1/trainval/JPEGImages',
         ANN_FN:
-            _DATA_DIR + '/coco/annotations/instances_train2014.json'
-    },
-    'FLC_val': {
-        IM_DIR:
-            _DATA_DIR + '/coco/images/val2014',
-        ANN_FN:
-            _DATA_DIR + '/coco/annotations/instances_val2014.json'
+            _DATA_DIR + '/FLC/FLC2019_v1/trainval/CocoAnnotations/FLC_2019_trainval_instance_seg.json'
     },
     'FLC_test': {
         IM_DIR:
-            _DATA_DIR + '/coco/images/val2014',
+            _DATA_DIR + '/FLC/FLC2019_v1/test/JPEGImages',
         ANN_FN:
-            _DATA_DIR + '/coco/annotations/instances_minival2014.json'
+            _DATA_DIR + '/FLC/FLC2019_v1/test/CocoAnnotations/FLC_2019_test_instance_seg.json'
     },
     'cityscapes_fine_instanceonly_seg_train': {
         IM_DIR:
