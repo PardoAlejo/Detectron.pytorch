@@ -4,7 +4,7 @@ MODEL:
   FASTER_RCNN: True
   MASK_ON: True
 RESNETS:
-  IMAGENET_PRETRAINED_WEIGHTS: 'data/pretrained_model/resnet50_caffe.pth'
+  IMAGENET_PRETRAINED_WEIGHTS: 'data/pretrained_model/resnet50_FPN_2x.pkl'
 NUM_GPUS: 8
 SOLVER:
   WEIGHT_DECAY: 0.0001
