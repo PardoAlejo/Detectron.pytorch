@@ -153,8 +153,11 @@ def main():
     if args.dataset == "coco2017":
         cfg.TRAIN.DATASETS = ('coco_2017_train',)
         cfg.MODEL.NUM_CLASSES = 81
-    elif args.dataset == "keypoints_coco2017":
-        cfg.TRAIN.DATASETS = ('keypoints_coco_2017_train',)
+    elif args.dataset == "coco2014":
+        cfg.TRAIN.DATASETS = ('coco_2014_train',)
+        cfg.MODEL.NUM_CLASSES = 81
+    elif args.dataset == "FLC_train":
+        cfg.TRAIN.DATASETS = ('FLC_train',)
         cfg.MODEL.NUM_CLASSES = 2
     else:
         raise ValueError("Unexpected args.dataset: {}".format(args.dataset))
