@@ -114,7 +114,6 @@ def parse_args():
 
     return parser.parse_args()
 
-
 def save_ckpt(output_dir, args, step, train_size, model, optimizer):
     """Save checkpoint"""
     if args.no_save:
@@ -156,7 +155,7 @@ def main():
     elif args.dataset == "coco2014":
         cfg.TRAIN.DATASETS = ('coco_2014_train',)
         cfg.MODEL.NUM_CLASSES = 81
-    elif args.dataset == "FLC_train":
+    elif args.dataset == "FLC":
         cfg.TRAIN.DATASETS = ('FLC_train',)
         cfg.MODEL.NUM_CLASSES = 2
     else:
@@ -362,7 +361,9 @@ def main():
     ### Training Loop ###
     maskRCNN.train()
 
-    CHECKPOINT_PERIOD = int(cfg.TRAIN.SNAPSHOT_ITERS / cfg.NUM_GPUS)
+    #CHECKPOINT_PERIOD = int(cfg.TRAIN.SNAPSHOT_ITERS / cfg.NUM_GPUS)
+
+    CHECKPOINT_PERIOD = int(len(dataloader) / (args.batch_size*cfg.NUM_GPUS))
 
     # Set index for decay steps
     decay_steps_ind = None
@@ -434,6 +435,7 @@ def main():
             training_stats.LogIterStats(step, lr)
 
             if (step+1) % CHECKPOINT_PERIOD == 0:
+                epoch = (step+1)/(CHECKPOINT_PERIOD)
                 save_ckpt(output_dir, args, step, train_size, maskRCNN, optimizer)
 
         # ---- Training ends ----
