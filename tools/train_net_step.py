@@ -114,24 +114,6 @@ def parse_args():
 
     return parser.parse_args()
 
-
-class parse_test(object):
-    pass
-
-
-def parse_test_args(args):
-    """
-    Parse input arguments
-    """
-    test_arg = parse_test()
-    test_arg.dataset = args.dataset
-    test_arg.cfg_file = args.cfg_file
-    test_arg.load_ckpt = ''
-    test_arg.vis = False
-
-    return test_arg
-
-
 def save_ckpt(output_dir, args, step, train_size, model, optimizer):
     """Save checkpoint"""
     if args.no_save:
