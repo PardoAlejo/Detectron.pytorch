@@ -92,9 +92,10 @@ if __name__ == '__main__':
         cfg.MODEL.NUM_CLASSES = 81
     elif args.dataset == "keypoints_coco2017":
         cfg.TEST.DATASETS = ('keypoints_coco_2017_val',)
-        cfg.MODEL.NUM_CLASSES = 2
+        cfg.MODEL.NUM_CLASSES = 81
     elif args.dataset == "FLC":
         cfg.TEST.DATASETS = ('FLC_test',)
+        cfg.MODEL.NUM_CLASSES = 2
     elif args.dataset == "FLC_train":
         cfg.TEST.DATASETS = ('FLC_train',)
         cfg.MODEL.NUM_CLASSES = 2
