@@ -51,6 +51,12 @@ DATASETS = {
         ANN_FN:
             _DATA_DIR + '/FLC/FLC2019_v1/test/CocoAnnotations/FLC_2019_test_instance_seg.json'
     },
+    'FLC_test_pos': {
+        IM_DIR:
+            _DATA_DIR + '/FLC/FLC2019_v1/test/JPEGImages',
+        ANN_FN:
+            _DATA_DIR + '/FLC/FLC2019_v1/test/CocoAnnotations/FLC_2019_test_instance_seg_pos.json'
+    },
     'cityscapes_fine_instanceonly_seg_train': {
         IM_DIR:
             _DATA_DIR + '/cityscapes/images',

@@ -96,6 +96,9 @@ if __name__ == '__main__':
     elif args.dataset == "FLC":
         cfg.TEST.DATASETS = ('FLC_test',)
         cfg.MODEL.NUM_CLASSES = 2
+    elif args.dataset == "FLC_pos":
+        cfg.TEST.DATASETS = ('FLC_test_pos',)
+        cfg.MODEL.NUM_CLASSES = 2
     elif args.dataset == "FLC_train":
         cfg.TEST.DATASETS = ('FLC_train',)
         cfg.MODEL.NUM_CLASSES = 2
