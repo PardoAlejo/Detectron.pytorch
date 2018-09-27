@@ -115,6 +115,23 @@ def parse_args():
     return parser.parse_args()
 
 
+class parse_test(object):
+    pass
+
+
+def parse_test_args(args):
+    """
+    Parse input arguments
+    """
+    test_arg = parse_test()
+    test_arg.dataset = args.dataset
+    test_arg.cfg_file = args.cfg_file
+    test_arg.load_ckpt = ''
+    test_arg.vis = False
+
+    return test_arg
+
+
 def save_ckpt(output_dir, args, step, train_size, model, optimizer):
     """Save checkpoint"""
     if args.no_save:
@@ -362,7 +379,9 @@ def main():
     ### Training Loop ###
     maskRCNN.train()
 
-    CHECKPOINT_PERIOD = int(cfg.TRAIN.SNAPSHOT_ITERS / cfg.NUM_GPUS)
+    #CHECKPOINT_PERIOD = int(cfg.TRAIN.SNAPSHOT_ITERS / cfg.NUM_GPUS)
+
+    CHECKPOINT_PERIOD = int(len(dataloader) / (args.batch_size*cfg.NUM_GPUS))
 
     # Set index for decay steps
     decay_steps_ind = None
@@ -434,6 +453,7 @@ def main():
             training_stats.LogIterStats(step, lr)
 
             if (step+1) % CHECKPOINT_PERIOD == 0:
+                epoch = (step+1)/(CHECKPOINT_PERIOD)
                 save_ckpt(output_dir, args, step, train_size, maskRCNN, optimizer)
 
         # ---- Training ends ----
