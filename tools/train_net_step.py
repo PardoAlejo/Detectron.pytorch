@@ -156,7 +156,7 @@ def main():
     elif args.dataset == "coco2014":
         cfg.TRAIN.DATASETS = ('coco_2014_train',)
         cfg.MODEL.NUM_CLASSES = 81
-    elif args.dataset == "FLC_train":
+    elif args.dataset == "FLC":
         cfg.TRAIN.DATASETS = ('FLC_train',)
         cfg.MODEL.NUM_CLASSES = 2
     else:
