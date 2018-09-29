@@ -43,7 +43,7 @@ DATASETS = {
         IM_DIR:
             _DATA_DIR + '/FLC/FLC2019_v1/trainval/JPEGImages',
         ANN_FN:
-            _DATA_DIR + '/FLC/FLC2019_v1/trainval/CocoAnnotations/FLC_2019_trainval_instance_seg.json'
+            _DATA_DIR + '/FLC/FLC2019_v1/trainval/CocoAnnotations/FLC_2019_trainval_instance_seg_pos.json'
     },
     'FLC_test': {
         IM_DIR:
