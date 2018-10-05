@@ -158,6 +158,10 @@ def main():
     elif args.dataset == "FLC":
         cfg.TRAIN.DATASETS = ('FLC_train',)
         cfg.MODEL.NUM_CLASSES = 2
+    elif args.dataset == "FLC_parsing":
+        cfg.TRAIN.DATASETS = ('FLC_train_parsing',)
+        cfg.MODEL.NUM_CLASSES = 2
+
     else:
         raise ValueError("Unexpected args.dataset: {}".format(args.dataset))
 

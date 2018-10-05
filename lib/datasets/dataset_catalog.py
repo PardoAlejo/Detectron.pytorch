@@ -45,6 +45,12 @@ DATASETS = {
         ANN_FN:
             _DATA_DIR + '/FLC/FLC2019_v1/trainval/CocoAnnotations/FLC_2019_trainval_instance_seg_pos.json'
     },
+    'FLC_train_parsing': {
+        IM_DIR:
+            _DATA_DIR + '/FLC/FLC2019_v1/trainval/JPEGImages',
+        ANN_FN:
+            _DATA_DIR + '/FLC/FLC2019_v1/trainval/CocoAnnotations/FLC_2019_trainval_parsing_pos.json'
+    },
     'FLC_test': {
         IM_DIR:
             _DATA_DIR + '/FLC/FLC2019_v1/test/JPEGImages',
@@ -56,6 +62,18 @@ DATASETS = {
             _DATA_DIR + '/FLC/FLC2019_v1/test/JPEGImages',
         ANN_FN:
             _DATA_DIR + '/FLC/FLC2019_v1/test/CocoAnnotations/FLC_2019_test_instance_seg_pos.json'
+    },
+    'FLC_test_parsing': {
+        IM_DIR:
+            _DATA_DIR + '/FLC/FLC2019_v1/test/JPEGImages',
+        ANN_FN:
+            _DATA_DIR + '/FLC/FLC2019_v1/test/CocoAnnotations/FLC_2019_test_parsing.json'
+    },
+    'FLC_test_pos_parsing': {
+        IM_DIR:
+            _DATA_DIR + '/FLC/FLC2019_v1/test/JPEGImages',
+        ANN_FN:
+            _DATA_DIR + '/FLC/FLC2019_v1/test/CocoAnnotations/FLC_2019_test_parsing_pos.json'
     },
     'cityscapes_fine_instanceonly_seg_train': {
         IM_DIR:
