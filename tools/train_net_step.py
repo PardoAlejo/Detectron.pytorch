@@ -347,6 +347,7 @@ def main():
     ### Training Setups ###
     args.run_name = misc_utils.get_run_name() + '_step'
     output_dir = misc_utils.get_output_dir(args, args.run_name)
+    output_dir += '{}'.format(args.dataset)
     args.cfg_filename = os.path.basename(args.cfg_file)
 
     if not args.no_save:
