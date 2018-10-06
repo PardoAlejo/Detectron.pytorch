@@ -1,5 +1,5 @@
 """ Training script for steps_with_decay policy"""
-
+#import ipdb
 import argparse
 import os
 import sys
@@ -364,10 +364,10 @@ def main():
 
     ### Training Loop ###
     maskRCNN.train()
+    #ipdb.set_trace()
+    CHECKPOINT_PERIOD = int(cfg.TRAIN.SNAPSHOT_ITERS / cfg.NUM_GPUS)
 
-    #CHECKPOINT_PERIOD = int(cfg.TRAIN.SNAPSHOT_ITERS / cfg.NUM_GPUS)
-
-    CHECKPOINT_PERIOD = int(len(dataloader) / (args.batch_size*cfg.NUM_GPUS))
+    #CHECKPOINT_PERIOD = int(len(dataloader) / (args.batch_size*cfg.NUM_GPUS))
 
     # Set index for decay steps
     decay_steps_ind = None
